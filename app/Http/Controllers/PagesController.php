@@ -8,8 +8,8 @@ class PagesController extends Controller
 {
     public function index() {
     	$data = array(
-    		'title' => 'Welcome to MemeCart',
-    		'desc' => 'Hahahaha'
+    		'title' => 'MemeCart',
+    		'desc' => 'A place to buy memes'
     	);
 
     	return view('pages/index')->with($data);

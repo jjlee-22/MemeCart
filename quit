@@ -1,0 +1,123 @@
+[33mcommit 456a500c7112edf3b3e5df87fcc7f264772ae837[m[33m ([m[1;36mHEAD -> [m[1;32mmaster[m[33m)[m
+Author: Jonathan <jjlee015@gmail.com>
+Date:   Mon Jul 22 15:42:09 2019 -0700
+
+    added create and edit options for posts
+
+ create mode 100644 resources/views/inc/messages.blade.php
+ create mode 100644 resources/views/posts/create.blade.php
+ create mode 100644 resources/views/posts/edit.blade.php
+
+[33mcommit ec81307cccbacf762f82c6972408264f203d573f[m
+Author: Jonathan <jjlee015@gmail.com>
+Date:   Fri Jul 19 16:20:15 2019 -0700
+
+    added PostsController and a navbar
+
+ create mode 100644 app/Http/Controllers/PostsController.php
+ create mode 100644 app/Post.php
+ create mode 100644 database/migrations/2019_07_19_201107_create_posts_table.php
+ create mode 100644 resources/views/posts/index.blade.php
+ create mode 100644 resources/views/posts/show.blade.php
+
+[33mcommit 09a20f24ebbb8f939d87c4d2899bdd3cc16d6c05[m[33m ([m[1;31morigin/master[m[33m)[m
+Author: Jonathan <jjlee015@gmail.com>
+Date:   Thu Jul 18 15:18:06 2019 -0700
+
+    initial commit
+
+ create mode 100644 .env.example
+ create mode 100644 .gitattributes
+ create mode 100644 .gitignore
+ create mode 100644 app/Console/Kernel.php
+ create mode 100644 app/Exceptions/Handler.php
+ create mode 100644 app/Http/Controllers/Auth/ForgotPasswordController.php
+ create mode 100644 app/Http/Controllers/Auth/LoginController.php
+ create mode 100644 app/Http/Controllers/Auth/RegisterController.php
+ create mode 100644 app/Http/Controllers/Auth/ResetPasswordController.php
+ create mode 100644 app/Http/Controllers/Controller.php
+ create mode 100644 app/Http/Controllers/PagesController.php
+ create mode 100644 app/Http/Kernel.php
+ create mode 100644 app/Http/Middleware/EncryptCookies.php
+ create mode 100644 app/Http/Middleware/RedirectIfAuthenticated.php
+ create mode 100644 app/Http/Middleware/TrimStrings.php
+ create mode 100644 app/Http/Middleware/VerifyCsrfToken.php
+ create mode 100644 app/Providers/AppServiceProvider.php
+ create mode 100644 app/Providers/AuthServiceProvider.php
+ create mode 100644 app/Providers/BroadcastServiceProvider.php
+ create mode 100644 app/Providers/EventServiceProvider.php
+ create mode 100644 app/Providers/RouteServiceProvider.php
+ create mode 100644 app/User.php
+ create mode 100644 artisan
+ create mode 100644 bootstrap/app.php
+ create mode 100644 bootstrap/autoload.php
+ create mode 100644 bootstrap/cache/.gitignore
+ create mode 100644 composer.json
+ create mode 100644 composer.lock
+ create mode 100644 config/app.php
+ create mode 100644 config/auth.php
+ create mode 100644 config/broadcasting.php
+ create mode 100644 config/cache.php
+ create mode 100644 config/database.php
+ create mode 100644 config/filesystems.php
+ create mode 100644 config/mail.php
+ create mode 100644 config/queue.php
+ create mode 100644 config/services.php
+ create mode 100644 config/session.php
+ create mode 100644 config/view.php
+ create mode 100644 database/.gitignore
+ create mode 100644 database/factories/ModelFactory.php
+ create mode 100644 database/migrations/2014_10_12_000000_create_users_table.php
+ create mode 100644 database/migrations/2014_10_12_100000_create_password_resets_table.php
+ create mode 100644 database/seeds/DatabaseSeeder.php
+ create mode 100644 package-lock.json
+ create mode 100644 package.json
+ create mode 100644 phpunit.xml
+ create mode 100644 public/.htaccess
+ create mode 100644 public/css/app.css
+ create mode 100644 public/favicon.ico
+ create mode 100644 public/fonts/vendor/bootstrap-sass/bootstrap/glyphicons-halflings-regular.eot
+ create mode 100644 public/fonts/vendor/bootstrap-sass/bootstrap/glyphicons-halflings-regular.svg
+ create mode 100644 public/fonts/vendor/bootstrap-sass/bootstrap/glyphicons-halflings-regular.ttf
+ create mode 100644 public/fonts/vendor/bootstrap-sass/bootstrap/glyphicons-halflings-regular.woff
+ create mode 100644 public/fonts/vendor/bootstrap-sass/bootstrap/glyphicons-halflings-regular.woff2
+ create mode 100644 public/index.php
+ create mode 100644 public/js/app.js
+ create mode 100644 public/mix-manifest.json
+ create mode 100644 public/robots.txt
+ create mode 100644 public/web.config
+ create mode 100644 readme.md
+ create mode 100644 resources/assets/js/app.js
+ create mode 100644 resources/assets/js/bootstrap.js
+ create mode 100644 resources/assets/js/components/Example.vue
+ create mode 100644 resources/assets/sass/_custom.scss
+ create mode 100644 resources/assets/sass/_variables.scss
+ create mode 100644 resources/assets/sass/app.scss
+ create mode 100644 resources/lang/en/auth.php
+ create mode 100644 resources/lang/en/pagination.php
+ create mode 100644 resources/lang/en/passwords.php
+ create mode 100644 resources/lang/en/validation.php
+ create mode 100644 resources/views/inc/navbar.blade.php
+ create mode 100644 resources/views/layouts/app.blade.php
+ create mode 100644 resources/views/pages/about.blade.php
+ create mode 100644 resources/views/pages/index.blade.php
+ create mode 100644 resources/views/pages/service.blade.php
+ create mode 100644 resources/views/welcome.blade.php
+ create mode 100644 routes/api.php
+ create mode 100644 routes/channels.php
+ create mode 100644 routes/console.php
+ create mode 100644 routes/web.php
+ create mode 100644 server.php
+ create mode 100644 storage/app/.gitignore
+ create mode 100644 storage/app/public/.gitignore
+ create mode 100644 storage/framework/.gitignore
+ create mode 100644 storage/framework/cache/.gitignore
+ create mode 100644 storage/framework/sessions/.gitignore
+ create mode 100644 storage/framework/testing/.gitignore
+ create mode 100644 storage/framework/views/.gitignore
+ create mode 100644 storage/logs/.gitignore
+ create mode 100644 tests/CreatesApplication.php
+ create mode 100644 tests/Feature/ExampleTest.php
+ create mode 100644 tests/TestCase.php
+ create mode 100644 tests/Unit/ExampleTest.php
+ create mode 100644 webpack.mix.js

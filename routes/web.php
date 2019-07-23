@@ -18,3 +18,8 @@ Route::get('/about', 'PagesController@about');
 Route::get('/service', 'PagesController@service');
 
 Route::resource('posts', 'PostsController');
+Auth::routes();
+
+Route::get('/dashboard', 'DashboardController@index');
+
+Route::get('/products', 'ProductsController@index');
