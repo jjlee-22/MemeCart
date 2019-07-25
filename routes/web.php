@@ -27,3 +27,9 @@ Route::resource('products', 'ProductsController');
 
 Route::get('/cart', 'ProductsController@cart');
 //Route::resource('products/cart', 'ProductsController');
+
+Route::get('/admin', 'AdminController@index');
+
+Route::get('/admin/products', 'AdminProductsController@index');
+
+Route::get('/admin/posts', 'AdminPostsController@index');
