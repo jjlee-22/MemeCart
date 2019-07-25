@@ -21,14 +21,14 @@
           <ul class="nav navbar-nav">
               <li><a href="/about">About</a></li>
               <li><a href="/service">Services</a></li>
-              <li><a href="/products">Products</a></li>
+              <li><a href="/products">Shop</a></li>
               <li><a href="/posts">Announcements</a></li>
 
           </ul>
 
           <!-- Right Side Of Navbar -->
           <ul class="nav navbar-nav navbar-right">
-            <li><a href="#">Cart</a></li>
+            <li><a href="/cart">Cart</a></li>
               <!-- Authentication Links -->
               @if (Auth::guest())
                   <li><a href="{{ route('login') }}">Login</a></li>

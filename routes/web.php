@@ -23,3 +23,7 @@ Auth::routes();
 Route::get('/dashboard', 'DashboardController@index');
 
 Route::get('/products', 'ProductsController@index');
+Route::resource('products', 'ProductsController');
+
+Route::get('/cart', 'ProductsController@cart');
+//Route::resource('products/cart', 'ProductsController');
