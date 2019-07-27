@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use App\Product;
 
 class AdminProductsController extends Controller
 {
@@ -13,7 +14,8 @@ class AdminProductsController extends Controller
      */
     public function index()
     {
-        return view('admin/products/index');
+        $products = Product::all();
+        return view('admin/products/index')->with('products', $products);
     }
 
     /**
@@ -23,7 +25,7 @@ class AdminProductsController extends Controller
      */
     public function create()
     {
-        //
+        return view('admin/products/create');
     }
 
     /**
@@ -34,7 +36,37 @@ class AdminProductsController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $this->validate($request, [
+            'name' => 'required',
+            'description' => 'required',
+            'price' => 'required'
+        ]);
+
+        // Handle file upload
+        if($request->hasFile('photo')) {
+            // Get filename with the extension
+            $filenameWithExt = $request->file('photo')->getClientOriginalName();
+            // Get just filename
+            $filename = pathinfo($filenameWithExt, PATHINFO_FILENAME);
+            // Get just ext
+            $extension = $request->file('photo')->guessClientExtension();
+            // Filename to store
+            $fileNameToStore = time().'.'.$extension;
+            // Upload Image
+            $path = $request->file('photo')->storeAs('public/photos/', $fileNameToStore);
+
+        } else {
+            $fileNameToStore = 'noimage.jpg';
+        }
+
+        $product = new Product;
+        $product->name = $request->input('name');
+        $product->description = $request->input('description');
+        $product->photo = $fileNameToStore;
+        $product->price = $request->input('price');
+        $product->save();
+
+        return redirect('admin/products')->with('success', 'Product Created!');
     }
 
     /**
