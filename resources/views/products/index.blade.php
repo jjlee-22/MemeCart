@@ -10,7 +10,7 @@
                         <img style="width:25%" src="/storage/photos/{{$product->photo}}">
                     </div>
                     <div class="col-md-4 col-sm-4">
-                        <h3><a href="/products/{{$product->id}}">{{$product->name}}</a></h3>
+                        <h3><a href="/products/{{$product->id}}">{{$product->category}}</a></h3>
                     </div>
                 </div>
 			</div>

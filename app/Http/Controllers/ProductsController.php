@@ -15,7 +15,7 @@ class ProductsController extends Controller
      */
     public function index()
     {
-        $products = Product::groupBy('name')->get();
+        $products = Product::groupBy('category')->get();
         return view('products/index')->with('products', $products);
     }
 
@@ -28,7 +28,7 @@ class ProductsController extends Controller
     public function show($id)
     {
         $products = Product::find($id);
-        $product_listing = Product::where('name', '=', $products->name)->get();
+        $product_listing = Product::where('category', '=', $products->category)->get();
 
         $data = [
             'products' => $products,

@@ -12,6 +12,10 @@
             {{Form::textarea('description', '', ['class' => 'form-control', 'placeholder' => 'Description'])}}
         </div>
         <div class="form-group">
+            {{Form::label('category', 'Category')}}
+            {{Form::text('category', '', ['class' => 'form-control', 'placeholder' => 'Category'])}}
+        </div>
+        <div class="form-group">
             {{Form::label('photo', 'Upload product image')}}
             {{Form::file('photo')}}
         </div>

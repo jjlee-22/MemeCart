@@ -29,6 +29,7 @@ Route::get('/cart', 'CartController@index');
 Route::post('emptycart', 'CartController@emptycart')->name('Overall.emptycart');
 Route::post('removeitem/{id}', 'CartController@removeitem')->name('Overall.removeitem');
 Route::post('addToCart/{id}/{name}/{quantity}/{price}', 'CartController@addToCart')->name('Overall.addToCart');
+Route::post('updatecart/{id}', 'CartController@updatecart')->name('Overall.updatecart');
 
 Route::resource('cart', 'CartController');
 
@@ -39,3 +40,6 @@ Route::resource('admin/products', 'AdminProductsController');
 
 Route::get('/admin/posts', 'AdminPostsController@index');
 Route::resource('admin/posts', 'AdminPostsController');
+
+Route::get('/checkout', 'CheckoutController@index');
+Route::resource('checkout', 'CheckoutController');

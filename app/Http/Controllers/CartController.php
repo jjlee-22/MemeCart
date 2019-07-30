@@ -39,7 +39,6 @@ class CartController extends Controller
 
     public function removeitem($rowId)
     {
-        //$rowId = Cart::content();
         Cart::remove($rowId);
         return redirect('cart')->with('success', 'Item Removed!');
     }
@@ -48,6 +47,12 @@ class CartController extends Controller
     {
         Cart::destroy();
         return redirect('cart')->with('success', 'Emptied Shopping Cart!');
+    }
+
+    public function updatecart(Request $request, $rowId)
+    {
+        Cart::update($rowId, $request->input('quantity'));
+        return redirect('cart')->with('success', 'Cart Updated!');
     }
     
 }

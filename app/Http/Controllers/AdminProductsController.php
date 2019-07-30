@@ -39,6 +39,7 @@ class AdminProductsController extends Controller
         $this->validate($request, [
             'name' => 'required',
             'description' => 'required',
+            'category' => 'required',
             'price' => 'required'
         ]);
 
@@ -62,6 +63,7 @@ class AdminProductsController extends Controller
         $product = new Product;
         $product->name = $request->input('name');
         $product->description = $request->input('description');
+        $product->category = $request->input('category');
         $product->photo = $fileNameToStore;
         $product->price = $request->input('price');
         $product->save();

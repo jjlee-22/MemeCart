@@ -2,7 +2,7 @@
 
 @section('content')
 	<a href="/products" class="btn btn-default">Go Back</a>
-    <h1>{{$products->name}}</h1>
+    <h1>{{$products->category}}</h1>
     @if(count($product_listing) > 0)
 		@foreach($product_listing as $product)
 			<div class="well">
