@@ -11,19 +11,43 @@ class CartController extends Controller
 {
     public function index()
     {
-        $products = Product::all();
-        return view('products/index')->with('products', $products);
+        $items = Cart::content();
+        $total = $subtotal = $tax = 0;
+
+        foreach($items as $item) {
+            $total += $item->total;
+            $subtotal += $item->subtotal;
+        }
+
+        $tax = $total - $subtotal;
+
+        $data = array(
+            'items' => $items,
+            'subtotal' => $subtotal,
+            'total' => $total,
+            'tax' => $tax
+        );
+
+        return view('cart/cart')->with($data);
     }
 
-    public function cart()
+    public function addToCart($id, $name, $quantity, $price)
     {
-        return view('products/cart');
+        Cart::add($id, $name, $quantity, $price);
+        return redirect('products')->with('success', 'Added To Cart!');
     }
 
-    public function addToCart()
+    public function removeitem($rowId)
     {
-        Cart::add('192ao12', 'Product 1', 1, 9.99);
-        Cart::add('1239ad0', 'Product 2', 2, 5.95, ['size' => 'large']);
-        return view('products/cart');
+        //$rowId = Cart::content();
+        Cart::remove($rowId);
+        return redirect('cart')->with('success', 'Item Removed!');
     }
+
+    public function emptycart() 
+    {
+        Cart::destroy();
+        return redirect('cart')->with('success', 'Emptied Shopping Cart!');
+    }
+    
 }

@@ -25,8 +25,12 @@ Route::get('/dashboard', 'DashboardController@index');
 Route::get('/products', 'ProductsController@index');
 Route::resource('products', 'ProductsController');
 
-Route::get('/cart', 'ProductsController@cart');
-//Route::resource('products/cart', 'ProductsController');
+Route::get('/cart', 'CartController@index');
+Route::post('emptycart', 'CartController@emptycart')->name('Overall.emptycart');
+Route::post('removeitem/{id}', 'CartController@removeitem')->name('Overall.removeitem');
+Route::post('addToCart/{id}/{name}/{quantity}/{price}', 'CartController@addToCart')->name('Overall.addToCart');
+
+Route::resource('cart', 'CartController');
 
 Route::get('/admin', 'AdminController@index');
 
