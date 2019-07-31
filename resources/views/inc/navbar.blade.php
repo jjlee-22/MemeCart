@@ -1,4 +1,8 @@
-<nav class="navbar navbar-inverse">
+@if (Request::is('/'))
+<nav class="navbar navbar-inverse navbar-fixed-top" style="opacity:0.95">
+ @else
+ <nav class="navbar navbar-inverse" style="opacity:0.95">
+@endif
   <div class="container">
       <div class="navbar-header">
 
@@ -20,7 +24,6 @@
           <!-- Left Side Of Navbar -->
           <ul class="nav navbar-nav">
               <li><a href="/about">About</a></li>
-              <li><a href="/service">Services</a></li>
               <li><a href="/products">Shop</a></li>
               <li><a href="/posts">Announcements</a></li>
 
@@ -28,7 +31,7 @@
 
           <!-- Right Side Of Navbar -->
           <ul class="nav navbar-nav navbar-right">
-          <li><a href="/cart">Cart ({{Cart::count()}})</a></li>
+          <li><a href="/cart">Cart  <span class="badge">{{Cart::count()}}</span></a></li>
               <!-- Authentication Links -->
               @if (Auth::guest())
                   <li><a href="{{ route('login') }}">Login</a></li>
