@@ -9,7 +9,7 @@ use DB;
 class PagesController extends Controller
 {
     public function index() {
-		$products = Product::orderBy('created_at','desc')->limit(3)->get();
+		$products = Product::orderBy('created_at','desc')->limit(6)->get();
 
     	$data = array(
     		'title' => 'MemeCart',
@@ -22,7 +22,7 @@ class PagesController extends Controller
 
     public function about() {
     	$data = array(
-    		'title' => 'About MemeCart',
+    		'title' => 'Frequently Asked Questions',
     		'desc' => 'Buy all the memes! The internet is no longer free!'
     	);
 

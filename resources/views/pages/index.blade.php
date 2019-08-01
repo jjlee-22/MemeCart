@@ -24,13 +24,13 @@
         <div class="item">
             <img src="/storage/img/memewallpaper2.png" alt="memewallpaper2" class="wallpaper">
             <div class="carousel-caption">
-                <h1 id="text-second"><strong></strong></h1>
+                <h1 id="text-second"><strong>Be Amazed</strong></h1>
             </div>
         </div>
         <div class="item">
             <img src="/storage/img/memewallpaper3.jpg" alt="memewallpaper3" class="wallpaper">
             <div class="carousel-caption">
-                <h1 id="text-third"><strong></strong></h1>
+                <h1 id="text-third"><strong>Dankest Memes</strong></h1>
             </div>
         </div>
     </div>
@@ -54,44 +54,50 @@
         <div class="row">
             <div class="col-sm-4">
                 <p><strong>2009</strong></p>
-                <img src="/storage/img/rage.jpg" class="img-circle person" alt="image">
+                <img src="/storage/img/rage.jpg" class="img-circle meme" alt="image">
             </div>
             <div class="col-sm-4">
                 <p><strong>2015</strong></p>
-                <img src="/storage/img/pepe.jpg" class="img-circle person" alt="image">
+                <img src="/storage/img/pepe.jpg" class="img-circle meme" alt="image">
             </div>
             <div class="col-sm-4">
                 <p><strong>2019</strong></p>
-                <img src="/storage/img/boy.jpg" class="img-circle person" alt="image">
+                <img src="/storage/img/boy.jpg" class="img-circle meme" alt="image">
             </div>
         </div>
     </div>
 </div>
 <!-- Lastest product container -->
-<div class="background" style="padding-top:15rem; padding-bottom:30rem;">
+<div class="background" style="padding-top:15rem; padding-bottom:15rem;">
     <div class="container" style="opacity:1">
         <div class="text-center">
-            <h1>Latest Memes</h1>
+            <h1 id="text-small2">Buy the Latest Memes</h1>
+            <br>
             @foreach($products as $product)
                 <div class="col-md-4">
-                    <a href="/products/{{$product->id}}"><img class="img-rounded" style="width:100%" src="/storage/photos/{{$product->photo}}"></a>
+                    <a href="/products/{{$product->id}}"><img id="img-animate" class="img-rounded thumbnail" style="width:100%" src="/storage/photos/{{$product->photo}}"></a>
                 </div>
             @endforeach
         </div>
     </div>
 </div>
 
+<!-- Footer -->
+<div class="container" style="padding-top:3rem; padding-bottom:2rem; text-align:center">
+    <h5>@ 2019 MemeCart, Inc.</h5>
+</div>
+
 @endsection
 
 <style>
-.person {
+.meme {
     border: 10px solid transparent;
     margin-bottom: 25px;
     width: 80%;
     height: 30%;
 }
     
-.person:hover {
+.meme:hover {
     border-color: #f1f1f1;
 }
 
@@ -129,19 +135,54 @@
         1px 1px 0 #000;
 }
 
-#text-second {
+#text-small2 {
     font-size: 5rem;
-    color: #009900;
+    -webkit-text-stroke: 1px black;
+    color: #009933;
+    text-shadow:
+        3px 3px 0 #000,
+        -1px -1px 0 #000,  
+        1px -1px 0 #000,
+        -1px 1px 0 #000,
+        1px 1px 0 #000;
+}
+
+#text-second {
+    font-size: 14rem;
+    -webkit-text-stroke: 3px black;
+    color: #cccc00;
+    text-shadow:
+        4px 4px 0 #000,
+        -2px -2px 0 #000,  
+        2px -2px 0 #000,
+        -2px 2px 0 #000,
+        2px 2px 0 #000;
 }
 
 #text-third {
-    font-size: 5rem;
-    color: #0066ff;
+    font-size: 14rem;
+    -webkit-text-stroke: 3px black;
+    color: #0077b3;
+    text-shadow:
+        4px 4px 0 #000,
+        -2px -2px 0 #000,  
+        2px -2px 0 #000,
+        -2px 2px 0 #000,
+        2px 2px 0 #000;
+}
+
+#img-animate {
+    transition: .2s;
+    margin: 3rem auto;
 }
 
 .background {
-    background-image: url('/storage/img/smile.jpg');
+    background-image: url('/storage/img/dankwallpaper.png');
     width: 100%;
-    opacity: 0.5;
+    background-attachment: fixed;
+}
+
+#img-animate:hover {
+    transform: scale(1.2);
 }
 </style>

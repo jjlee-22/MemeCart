@@ -36,4 +36,9 @@ class CheckoutController extends Controller
 
         return redirect('checkout')->with('success', 'Order Successful!');
     }
+
+    public function confirm(Request $request)
+    {
+        return 'hello';
+    }
 }

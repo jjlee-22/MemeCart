@@ -42,4 +42,5 @@ Route::get('/admin/posts', 'AdminPostsController@index');
 Route::resource('admin/posts', 'AdminPostsController');
 
 Route::get('/checkout', 'CheckoutController@index');
+Route::get('confirm', 'CheckoutController@confirm')->name('Overall.confirm');
 Route::resource('checkout', 'CheckoutController');

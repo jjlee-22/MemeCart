@@ -23,9 +23,9 @@
       <div class="collapse navbar-collapse" id="app-navbar-collapse">
           <!-- Left Side Of Navbar -->
           <ul class="nav navbar-nav">
-              <li><a href="/about">About</a></li>
               <li><a href="/products">Shop</a></li>
               <li><a href="/posts">Announcements</a></li>
+              <li><a href="/about">FAQ</a></li>
 
           </ul>
 

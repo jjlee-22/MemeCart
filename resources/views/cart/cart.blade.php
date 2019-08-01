@@ -40,7 +40,7 @@
             <td colspan="5" style="text-align: right">Taxes: ${{$tax}}</td>
         </tr>
         <tr>
-            <td colspan="5" style="text-align: right">Total: ${{$total}}</td>
+            <td colspan="5" style="text-align: right"><strong>Total: ${{$total}}</strong></td>
         </tr>
     </table>
     <a href="/checkout" class="btn btn-success pull-right">Checkout</a>
