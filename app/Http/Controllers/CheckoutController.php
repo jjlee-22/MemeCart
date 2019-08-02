@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Storage;
 use App\Order;
+use Cart;
 use DB;
 
 class CheckoutController extends Controller
@@ -37,8 +38,9 @@ class CheckoutController extends Controller
         return redirect('checkout')->with('success', 'Order Successful!');
     }
 
-    public function confirm(Request $request)
+    public function confirmation()
     {
-        return 'hello';
+        Cart::destroy();
+        return view('/checkout/confirm');
     }
 }

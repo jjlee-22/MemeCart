@@ -4,7 +4,7 @@
 <div class="container">
     <h1>Checkout</h1>
     <br>
-    {!! Form::open(['action' => ['CheckoutController@confirm'], 'method' => 'POST']) !!}
+    {!! Form::open(['action' => ['CheckoutController@confirmation'], 'method' => 'POST']) !!}
     <div class="row">
         <h2>User Details</h2>
         <div class="form-group col-md-3">
@@ -60,7 +60,6 @@
             {{Form::label('date', 'Expiration Date')}}
             {{Form::text('date', '', ['class' => 'form-control', 'placeholder' => ''])}}
         </div>
-        {{Form::hidden('_method', 'PUT')}}
         {{Form::submit('Continue', ['class'=>'btn btn-primary'])}}
     </div>
     {!! Form::close() !!}
