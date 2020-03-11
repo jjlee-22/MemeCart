@@ -7,7 +7,7 @@
 
 ## MemeCart
 
-This is just a basic e-commerce I built as a way to learn and implement all web CRUD applications
+This is just a basic e-commerce site I built as a way to learn and implement all web CRUD applications
 
 Pick a meme and buy it. Taxes excluded. Admins can inflate the prices as they please.
 
